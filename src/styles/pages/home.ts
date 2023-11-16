@@ -2,9 +2,9 @@ import { styled } from "..";
 
 export const HomeContainer = styled('main', {
     display: 'flex',
-    gap: '4.8rem',
+    width: '100%',
     maxWidth: 'calc(100vw - ((100vw - 1180px) / 2))',
-    margin: '0 auto',
+    marginLeft: 'auto',
 });
 
 export const HomeProduct = styled('a', {
@@ -16,6 +16,8 @@ export const HomeProduct = styled('a', {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+   
+
 
     img:{
         objectFit: 'cover',
