@@ -1,10 +1,10 @@
 import { styled } from "..";
 
 export const HomeContainer = styled('main', {
-    display: 'flex',
-    width: '100%',
-    maxWidth: 'calc(100vw - ((100vw - 1180px) / 2))',
-    marginLeft: 'auto',
+  display: 'flex',
+  width: '100%',
+  maxWidth: 'calc(100vw - ((100vw - 1180px) / 2))',
+  marginLeft: 'auto',
 });
 
 export const HomeProduct = styled('a', {

@@ -1,16 +1,16 @@
-import { styled } from '..';
+import { styled } from "..";
 
 export const Container = styled('div', {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'flex-start',
-    minHeight: '100vh',
-    justifyContent: 'center'
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'flex-start',
+  minHeight: '100vh',
+  justifyContent: 'center'
 });
 
 export const Header = styled('header', {
-    padding: '3.2rem 0',
-    width: '100%',
-    maxWidth: 1100,
-    margin: '0 auto', 
+  padding: '3.2rem 0',
+  width: '100%',
+  maxWidth: 1100,
+  margin: '0 auto', 
 })

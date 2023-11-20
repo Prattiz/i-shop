@@ -1,24 +1,24 @@
-import { globalCss } from "./index";
+import { globalCss } from ".";
 
 export const GlobalStyles = globalCss({
 
-    '*':{
-        margin: 0,
-        padding: 0,
-        boxSizing: 'border-box',
-    },
+  '*':{
+      margin: 0,
+      padding: 0,
+      boxSizing: 'border-box',
+  },
 
-    ':root':{
-        fontSize: '62.5%'
-    },
+  ':root':{
+      fontSize: '62.5%'
+  },
 
-    'body':{
-        backgroundColor: '$gray900',
-        color: '$gray100',
-        '-webkit-font-smoothing': 'antialiased',
-    },
+  'body':{
+      backgroundColor: '$gray900',
+      color: '$gray100',
+      '-webkit-font-smoothing': 'antialiased',
+  },
 
-    'body, input, textarea, button': {
-        fontWeight: 400,
-    }, 
-})
+  'body, input, textarea, button': {
+      fontWeight: 400,
+  }, 
+});
