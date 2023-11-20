@@ -1,10 +1,10 @@
-import { AppProps } from "next/app"
-import { GlobalStyles } from "../styles/global"
+import { AppProps } from "next/app";
+import { GlobalStyles } from "../styles/global";
 
-import logo from "../../public/logo.svg"
-import { Container, Header } from "../styles/pages/app"
+import logo from "../../public/logo.svg";
+import { Container, Header } from "../styles/pages/app";
 
-import Image from "next/future/image"
+import Image from "next/future/image";
 
 GlobalStyles()
 
