@@ -15,7 +15,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             error: 'Price not found'
         })
     }
-    const successUrl = `${process.env.NEXT_URL}/sucess`;
+    const successUrl = `${process.env.NEXT_URL}/success?session_id={CHECKOUT_SESSION_ID}`;
     const cancelUrl = `${process.env.NEXT_URL}`
 
     const checkOutSection = await stripe.checkout.sessions.create({
