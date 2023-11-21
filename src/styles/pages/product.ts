@@ -64,6 +64,11 @@ export const DetailsContainer = styled('footer', {
 
     '&:hover': {
       backgroundColor: '$green300',
+    },
+
+    '&:disabled':{
+      cursor: 'not-allowed',
+      opacity: '0.6'
     }
   },
 });
