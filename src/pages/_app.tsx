@@ -3,6 +3,7 @@ import { GlobalStyles } from "../styles/global";
 
 import logo from "../../public/logo.svg";
 import { Container, Header } from "../styles/pages/app";
+import { Handbag } from "@phosphor-icons/react";
 
 import Image from "next/future/image";
 
@@ -13,6 +14,7 @@ function App({ Component, pageProps }: AppProps) {
     <Container>
       <Header>
         <Image src={logo} alt="Ignite Shop" />
+        <button><Handbag size={22} weight="bold"/></button>
       </Header>
 
       <Component {...pageProps} />

@@ -22,4 +22,9 @@ export const GlobalStyles = globalCss({
   'body, input, textarea, button': {
       fontWeight: 400,
   }, 
+
+  'button':{
+    cursor: 'pointer',
+    border: 'none',
+  },
 });

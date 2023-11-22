@@ -1,10 +1,9 @@
-import { GetStaticPaths, GetStaticProps } from "next"
+import { GetStaticPaths, GetStaticProps } from "next";
 import Image from "next/future/image";
-import Head from "next/head";
 import { useState } from "react";
 import Stripe from "stripe";
 import { stripe } from "../../lib/stripe";
-import { ImageContainer, ProductContainer, DetailsContainer } from "../../styles/pages/product"
+import { ImageContainer, ProductContainer, DetailsContainer } from "../../styles/pages/product";
 import axios from "axios";
 
 interface ProductProps {
@@ -20,7 +19,7 @@ interface ProductProps {
 
 export default function Product({ product }: ProductProps) {
 
-  const [ creatingCheckout, setCreatingCheckout ] = useState(false)
+  const [ creatingCheckout, setCreatingCheckout ] = useState(false);
 
   async function handleBuyProduct() {
     try {
@@ -44,10 +43,6 @@ export default function Product({ product }: ProductProps) {
 
   return (
     <>
-      <Head>
-        <title>{product.name}</title>
-      </Head>
-
       <ProductContainer>
         <ImageContainer>
           <Image src={product.imageUrl} width={520} height={480} alt="" />

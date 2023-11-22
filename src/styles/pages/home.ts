@@ -9,6 +9,7 @@ export const HomeContainer = styled('main', {
 
 export const HomeProduct = styled('div', {
     background: 'linear-gradient(100deg, #1ea483 0%, #7465d4 100%)',
+    minWidth: 420,
     borderRadius: 8,
     padding: '.4rem',
     cursor: 'pointer',
@@ -17,7 +18,6 @@ export const HomeProduct = styled('div', {
     alignItems: 'center',
     justifyContent: 'center',
     textDecoration: 'none',
-   
 
 
     img:{
@@ -39,6 +39,11 @@ export const HomeProduct = styled('div', {
         opacity: 0,
         transition: 'all 0.2s ease-in-out',
 
+        div:{
+            display: 'flex',
+            flexDirection: 'column',
+        },
+
         strong: {
            fontSize: '$lg',
            color: '$gray100'
@@ -49,6 +54,13 @@ export const HomeProduct = styled('div', {
             fontWeight: 'bold',
             color: '$green300'
         },
+        
+        button:{
+            color: '$white',
+            backgroundColor: '$green500',
+            padding: '1.2rem',
+            borderRadius: 6,
+        },
     },
 
     '&:hover':{
@@ -56,6 +68,5 @@ export const HomeProduct = styled('div', {
             transform: 'translateY(0%)',
             opacity: 1
         }
-    }
-    
+    }   
 });
