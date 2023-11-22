@@ -26,6 +26,7 @@ export const
         },
 
         fontSizes: {
+            sml: '1.6rem',
             md: '1.8rem',
             lg: '2rem',
             xl: '2.4rem',

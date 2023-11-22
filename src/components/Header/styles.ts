@@ -8,13 +8,4 @@ export const HeaderContainer = styled('header', {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    
-  
-    button:{
-      marginLeft: 'auto',
-      color: '$gray400',
-      backgroundColor: '$gray800',
-      padding: '1.2rem',
-      borderRadius: 6,
-    },
   })
