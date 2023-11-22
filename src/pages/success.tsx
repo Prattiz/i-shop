@@ -15,6 +15,7 @@ interface SuccessProps{
 
 export default function Success({customerName, product}: SuccessProps) {
   return(
+    
     <SucessContainer>
       <h1>Compra efetuada!</h1>
       <SucessImage>
