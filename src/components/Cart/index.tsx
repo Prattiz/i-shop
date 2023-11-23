@@ -3,6 +3,8 @@ import { Handbag, X } from "@phosphor-icons/react";
 import { ButtonClose, ButtonTrigger, CartConteiner, SelectedProducts, Product, ProductImage, ButtonHandle } from "./styles";
 import Image from "next/image";
 
+import test from '../../../public/Test-image.png';
+
 export function Cart(){
     return(
         <Dialog.Root>
@@ -19,32 +21,30 @@ export function Cart(){
                         <SelectedProducts>
                             <Product>
                                 <ProductImage>
-                                    <Image src="" alt="" />
+                                    <Image src={test} width={100} height={100} alt="Camisa x" />
                                 </ProductImage>
                                 <div>
-                                    <span>camiseta x</span>
-                                    <strong>30 reais</strong>
+                                    <span>Camiseta x</span>
+                                    <strong>R$ 30</strong>
                                     <button>Remover</button>
                                 </div>
                             </Product>
-                            
                         </SelectedProducts>
-
-                        <footer>
-
-                            <div>
-                                <span>Quantidade</span>
-                                <span>3 itens</span>
-                            </div>
-
-                            <div>
-                                <strong>Valor Total</strong>
-                                <strong>30 R$</strong>
-                            </div>
-
-                            <ButtonHandle>Finalizar Compra</ButtonHandle>
-                        </footer>  
+                       
                     </main>
+
+                    <footer>
+                        <div>
+                            <span>Quantidade</span>
+                            <span>3 itens</span>
+                        </div>
+
+                        <div>
+                            <strong>Valor Total</strong>
+                            <strong>30 R$</strong>
+                        </div>
+                        <ButtonHandle>Finalizar Compra</ButtonHandle>
+                    </footer>  
                 </CartConteiner>
             </Dialog.Portal>
         </Dialog.Root>

@@ -15,7 +15,7 @@ export const CartConteiner = styled(Dialog.Content, {
     right: 0,
     top: 0,
     bottom: 0,
-    width:'48rem',
+    width: '50rem',
     height: '100vh',
     background: '$gray800',
     boxShadow: '-4px 0px 30px 0px rgba(0, 0, 0, 0.80)',
@@ -31,7 +31,10 @@ export const CartConteiner = styled(Dialog.Content, {
     },
 
     footer:{
-      
+        position: 'fixed',
+        bottom: 30,
+        right: 50,
+        width: '40rem',
 
         div:{
             display: 'flex',
@@ -53,7 +56,6 @@ export const CartConteiner = styled(Dialog.Content, {
             },
         }  
     }
-    
 })
 
 export const ButtonClose = styled(Dialog.Close, {
@@ -66,12 +68,18 @@ export const ButtonClose = styled(Dialog.Close, {
 
 export const SelectedProducts = styled('section', {
     width: '100%',
+    maxHeight: '45rem',
     margin: '0 4.8rem 2.4rem 4.8rem',
+    display: "flex",
+    flexDirection: 'column',
+    gap: '2rem',
+    overflow: 'auto',
 })
 
 export const Product = styled('div', {
     display: "flex",
     gap: '2rem',
+
 
     div:{
         display:'flex',
@@ -98,8 +106,10 @@ export const Product = styled('div', {
 export const ProductImage = styled('div', {
     background: 'linear-gradient(100deg, #1ea483 0%, #7465d4 100%)',
     borderRadius: 8,
-    width: 101,
-    height:93,
+    width: 112,
+    height:110,
+    display: 'flex',
+    justifyContent: "center",
 })
 
 export const ButtonHandle = styled('button', {
@@ -108,7 +118,6 @@ export const ButtonHandle = styled('button', {
     width: '100%',
     color: '$white',
     fontWeight: 'bold',
-    marginTop: '5.7rem',
     borderRadius: 8,
 })
 
