@@ -4,10 +4,28 @@ import * as Dialog from "@radix-ui/react-dialog";
 export const ButtonTrigger = styled(Dialog.Trigger, {
 
     marginLeft: 'auto',
+    position: 'relative',
     color: '$gray400',
     backgroundColor: '$gray800',
     padding: '1.2rem',
     borderRadius: 6,
+})
+
+export const Total = styled('strong', {
+    position: 'absolute',
+    top:-9,
+    right:-9,
+    width: '2.5rem',
+    height: '2.5rem',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    color: '$white',
+    background: '$green300',
+    fontSize: '1.2rem',
+    borderRadius: '15px',
+    border: '3px solid $gray900' 
+ 
 })
 
 export const CartConteiner = styled(Dialog.Content, {

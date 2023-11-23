@@ -1,9 +1,9 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import { Handbag, X } from "@phosphor-icons/react";
-import { ButtonClose, ButtonTrigger, CartConteiner, SelectedProducts, Product, ProductImage, ButtonHandle } from "./styles";
+import { ButtonClose, ButtonTrigger, CartConteiner, SelectedProducts, Product, ProductImage, ButtonHandle, Total } from "./styles";
 import Image from "next/image";
 
-import test from '../../../public/Test-image.png';
+
 import { useContext } from "react";
 import { CartContext } from "../../context/context";
 
@@ -14,6 +14,7 @@ export function Cart(){
     return(
         <Dialog.Root>
             <ButtonTrigger>
+                {totalCart >= 1 && <Total>{totalCart}</Total>}
                <Handbag size={22} weight="bold"/>
             </ButtonTrigger>
 
