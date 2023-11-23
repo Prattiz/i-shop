@@ -1,6 +1,10 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import { Handbag, X } from "@phosphor-icons/react";
-import { ButtonClose, ButtonTrigger, CartConteiner, SelectedProducts, Product, ProductImage, ButtonHandle, Total } from "./styles";
+import { 
+    ButtonClose, ButtonTrigger, CartConteiner, SelectedProducts, 
+    Product, ProductImage, ButtonHandle, Total 
+} from "./styles";
+
 import Image from "next/image";
 
 
@@ -9,7 +13,12 @@ import { CartContext } from "../../context/context";
 
 export function Cart(){
 
-    const { cartValues, totalCart } = useContext(CartContext);
+    const { cartValues, totalCart, handleRemove, totalPrice } = useContext(CartContext);
+
+    const price = new Intl.NumberFormat('pt-BR', {
+        style: 'currency',
+        currency: 'BRL',
+    }).format(totalPrice)
 
     return(
         <Dialog.Root>
@@ -23,10 +32,11 @@ export function Cart(){
                     <ButtonClose><X size={25} weight="bold"/></ButtonClose>
                     <h2>Sacola de compras</h2>
                     <main>
-                        {totalCart <= 0 && <span>você não adicionou nada ao seu carrinho...</span> }
+                        {totalCart <= 0 && <span>você não adicionou nada ao seu carrinho...</span>}
 
                         { 
                         cartValues.map((item) => (
+                          
                         <SelectedProducts key={item.id}>
                             <Product>
                                 <ProductImage>
@@ -36,12 +46,11 @@ export function Cart(){
                                 <div>
                                     <span>{item.name}</span>
                                     <strong>{item.price}</strong>
-                                    <button>Remover</button>
+                                    <button onClick={() => handleRemove(item.id)}>Remover</button>
                                 </div>
                             </Product>
                         </SelectedProducts>
-                        ))
-                           
+                        ))  
                         }
                        
                     </main>
@@ -54,9 +63,9 @@ export function Cart(){
 
                         <div>
                             <strong>Valor Total</strong>
-                            <strong>R$ 30</strong>
+                            <strong>{price}</strong>
                         </div>
-                        <ButtonHandle>Finalizar Compra</ButtonHandle>
+                        <ButtonHandle disabled={totalCart <= 0}>Finalizar Compra</ButtonHandle>
                     </footer>  
                 </CartConteiner>
             </Dialog.Portal>

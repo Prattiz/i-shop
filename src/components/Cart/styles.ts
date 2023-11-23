@@ -138,5 +138,10 @@ export const ButtonHandle = styled('button', {
     color: '$white',
     fontWeight: 'bold',
     borderRadius: 8,
+
+    '&:disabled':{
+        cursor: 'not-allowed',
+        opacity: 0.5
+    }
 })
 

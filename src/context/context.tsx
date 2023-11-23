@@ -10,14 +10,16 @@ export interface ProductProps{
     description: string,
     imageUrl: string,
     price: string,
-    numberPrice: string,
+    numberPrice: number,
     defaultPriceId: string, 
 } 
 
 interface CartContextProps{
     cartValues: ProductProps[],
+    handleRemove: (index: string) => void,
     addProduct: (product: ProductProps) => void,
     totalCart: number,
+    totalPrice: number,
 }
 
 
@@ -25,16 +27,24 @@ export const CartContext = createContext({} as CartContextProps);
 
 export function CartContextProvider({children}: ICartContextProvider){
 
-    const [cartValues, setcartValues] = useState<ProductProps[]>([]);
+    const [cartValues, setCartValues] = useState<ProductProps[]>([]);
     const totalCart = cartValues.length;
+
+    const totalPrice = cartValues.reduce((total, product) => {
+        return total + product.numberPrice;
+    }, 0)
     
     function addProduct(product: ProductProps){
-        setcartValues(state => [...state, product])
+        setCartValues(state => [...state, product])
+    }
+
+    function handleRemove(index: string) {
+        setCartValues((state) => state.filter(item => index !== item.id));
     }
 
 
     return(
-        <CartContext.Provider value={{cartValues, addProduct, totalCart}}>
+        <CartContext.Provider value={{cartValues, addProduct, totalCart, handleRemove, totalPrice}}>
             {children}
         </CartContext.Provider>
     )
