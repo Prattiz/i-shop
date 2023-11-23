@@ -69,7 +69,7 @@ export const ButtonClose = styled(Dialog.Close, {
 export const SelectedProducts = styled('section', {
     width: '100%',
     maxHeight: '45rem',
-    margin: '0 4.8rem 2.4rem 4.8rem',
+    margin: '0 4.8rem 2.4rem 2.5rem',
     display: "flex",
     flexDirection: 'column',
     gap: '2rem',
@@ -85,10 +85,11 @@ export const Product = styled('div', {
         display:'flex',
         flexDirection: 'column',
         fontSize: '$md',
+        
 
         span:{
             color: '$gray300',
-            lineHeight: '160%',
+            lineHeight: '140%',
         },
 
         button:{

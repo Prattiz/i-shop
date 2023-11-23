@@ -15,7 +15,9 @@ export interface ProductProps{
 } 
 
 interface CartContextProps{
-    cartValues: ProductProps[]
+    cartValues: ProductProps[],
+    addProduct: (product: ProductProps) => void,
+    totalCart: number,
 }
 
 
@@ -23,11 +25,16 @@ export const CartContext = createContext({} as CartContextProps);
 
 export function CartContextProvider({children}: ICartContextProvider){
 
-    const [cartValues, setcartValues] = useState<ProductProps[]>([]) 
+    const [cartValues, setcartValues] = useState<ProductProps[]>([]);
+    const totalCart = cartValues.length;
+    
+    function addProduct(product: ProductProps){
+        setcartValues(state => [...state, product])
+    }
 
 
     return(
-        <CartContext.Provider value={{cartValues}}>
+        <CartContext.Provider value={{cartValues, addProduct, totalCart}}>
             {children}
         </CartContext.Provider>
     )

@@ -6,31 +6,35 @@ import { GetStaticProps } from "next";
 import Link from "next/link";
 
 import { useKeenSlider } from 'keen-slider/react';
+import 'keen-slider/keen-slider.min.css';
 
 import { stripe } from "../lib/stripe";
 import Stripe from "stripe";
 
-import 'keen-slider/keen-slider.min.css';
+import { useContext } from "react";
+import { CartContext, ProductProps } from "../context/context";
 
 
 interface HomeProps {
-  products: {
-    id: string,
-    name: string,
-    imageUrl: string,
-    price: string,
-  }[]
+  products: ProductProps[],
 }
 
 export default function Home({ products }: HomeProps) {
+
+  const { addProduct } = useContext(CartContext)
+
   const [ sliderRef ] = useKeenSlider({
     slides: {
       perView: 'auto',
       spacing: 48,
     },
-    
-    
   });
+
+  function handleAddProduct(e: any, product: ProductProps){
+    e.preventDefault()
+    addProduct(product)
+  }
+
 
   return (
     <HomeContainer ref={sliderRef} className="keen-slider">
@@ -46,7 +50,10 @@ export default function Home({ products }: HomeProps) {
                   <strong>{product.name}</strong>
                   <span>{product.price}</span>
                 </div>
-                <button><Handbag size={28} weight="bold"/></button>
+
+                <button type="button" onClick={(e) => handleAddProduct(e, product)}>
+                  <Handbag size={28} weight="bold"/>
+                </button>
               </footer>
             </HomeProduct>
           </Link>
