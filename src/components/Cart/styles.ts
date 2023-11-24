@@ -123,7 +123,7 @@ export const Product = styled('div', {
 }) 
 
 export const ProductImage = styled('div', {
-    background: 'linear-gradient(100deg, #1ea483 0%, #7465d4 100%)',
+    background: '$linearGradient',
     borderRadius: 8,
     width: 112,
     height:110,

@@ -8,8 +8,10 @@ export const HomeContainer = styled('main', {
 });
 
 export const HomeProduct = styled('div', {
-    background: 'linear-gradient(100deg, #1ea483 0%, #7465d4 100%)',
+    background: '$linearGradient',
     minWidth: 420,
+    maxWidth: 550,
+    width: "100%",
     borderRadius: 8,
     padding: '.4rem',
     cursor: 'pointer',

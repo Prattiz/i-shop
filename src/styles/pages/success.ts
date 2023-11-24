@@ -40,7 +40,7 @@ export const SucessImage = styled('div', {
     
     width: 150,
     height: 150,
-    background: 'linear-gradient(180deg, #1ea483 0%, #7465d4 100%)',
+    background: '$linearGradient',
     borderRadius: 100,
     display: 'flex',
     alignItems: 'center',

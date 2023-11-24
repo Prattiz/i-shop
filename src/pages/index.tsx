@@ -13,6 +13,7 @@ import Stripe from "stripe";
 
 import { useContext } from "react";
 import { CartContext, ProductProps } from "../context/context";
+import { SckeletonProduct } from "../components/Loading";
 
 
 interface HomeProps {
@@ -38,8 +39,11 @@ export default function Home({ products }: HomeProps) {
 
   return (
     <HomeContainer ref={sliderRef} className="keen-slider">
-      {products.map(product => {
-
+      <SckeletonProduct className="keen-slider__slide"/>
+      <SckeletonProduct className="keen-slider__slide"/>
+      <SckeletonProduct className="keen-slider__slide"/>
+      {/* {
+      products.map(product => {
         return (
           <Link href={`/product/${product.id}`} key={product.id} prefetch={false}>
             <HomeProduct className="keen-slider__slide">
@@ -61,7 +65,8 @@ export default function Home({ products }: HomeProps) {
             </HomeProduct>
           </Link>
         )
-      })}
+      })
+      } */}
     </HomeContainer>
   )
 }
