@@ -68,7 +68,6 @@ export const DetailsContainer = styled('footer', {
 
     '&:disabled':{
       cursor: 'not-allowed',
-      opacity: '0.6'
     }
   },
 });

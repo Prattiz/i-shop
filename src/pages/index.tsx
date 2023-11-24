@@ -21,7 +21,7 @@ interface HomeProps {
 
 export default function Home({ products }: HomeProps) {
 
-  const { addProduct, disableButtonIfExists } = useContext(CartContext)
+  const { addProduct, disableButtonIfExists } = useContext(CartContext);
 
   const [ sliderRef ] = useKeenSlider({
     slides: {
