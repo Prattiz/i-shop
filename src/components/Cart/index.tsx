@@ -7,8 +7,9 @@ import {
 
 import Image from "next/image";
 
+import axios from "axios";
 
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "../../context/context";
 
 export function Cart(){
@@ -18,7 +19,25 @@ export function Cart(){
     const price = new Intl.NumberFormat('pt-BR', {
         style: 'currency',
         currency: 'BRL',
-    }).format(totalPrice)
+    }).format(totalPrice);
+
+    
+    async function handleBuyProduct() {
+        try {
+    
+          const response = await axios.post('/api/checkout', {
+            product: cartValues,
+          });
+    
+          const { checkOutUrl } = response.data;
+          
+          
+          window.location.href = checkOutUrl;
+    
+        } catch (err) {
+          alert('falha ao redirecionar usuário');
+        }
+    }
 
     return(
         <Dialog.Root>
@@ -65,7 +84,12 @@ export function Cart(){
                             <strong>Valor Total</strong>
                             <strong>{price}</strong>
                         </div>
-                        <ButtonHandle disabled={totalCart <= 0}>Finalizar Compra</ButtonHandle>
+                        <ButtonHandle 
+                        disabled={totalCart == 0}
+                        onClick={handleBuyProduct}
+                        >
+                            Finalizar Compra
+                        </ButtonHandle>
                     </footer>  
                 </CartConteiner>
             </Dialog.Portal>

@@ -12,7 +12,6 @@ interface ProductPropsId {
 }
 
 
-
 export default function Product({ product }: ProductPropsId) {
 
   const { addProduct, disableButtonIfExists } = useContext(CartContext);
@@ -40,7 +39,7 @@ export default function Product({ product }: ProductPropsId) {
           {
             disableButtonIfExists(product.id) == false? 
             <button onClick={(e) => handleAddProduct(e, product)}>
-              Adicionar ao carrinho
+              Colocar na sacola
             </button>
           :
             <button disabled>
