@@ -6,7 +6,7 @@ export const SucessContainer = styled('main', {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    height: 656,
+    height: 656,   
 
     h1:{
         fontSize: '$xl2',
@@ -14,7 +14,7 @@ export const SucessContainer = styled('main', {
     },
 
     p:{
-        fontSize: '$xl',
+        fontSize: '$lg',
         color: '$gray300',
         maxWidth: 560,
         textAlign: 'center',
@@ -37,19 +37,27 @@ export const SucessContainer = styled('main', {
 });
 
 export const SucessImage = styled('div', {
-    width: '100%',
-    maxWidth: 130,
-    height: 145,
+    
+    width: 150,
+    height: 150,
     background: 'linear-gradient(180deg, #1ea483 0%, #7465d4 100%)',
-    borderRadius: 8,
-    padding: '0.25rem',
-    marginTop: '4rem',
+    borderRadius: 100,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-  
-  
+    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)',
+    zIndex: '1',
     img: {
       objectFit: 'cover',
+    }
+});
+
+export const SucessImageContent = styled('section', {
+    display: 'flex',
+    alignItems: "center",
+    margin: '2rem 0',
+
+    'div + div':{
+        marginLeft: '-7.5rem'
     }
 });
