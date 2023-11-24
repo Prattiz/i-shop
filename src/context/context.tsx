@@ -20,6 +20,7 @@ interface CartContextProps{
     addProduct: (product: ProductProps) => void,
     totalCart: number,
     totalPrice: number,
+    disableButtonIfExists: (product: string) => boolean
 }
 
 
@@ -42,9 +43,14 @@ export function CartContextProvider({children}: ICartContextProvider){
         setCartValues((state) => state.filter(item => index !== item.id));
     }
 
+    function disableButtonIfExists(product: string){
+        return cartValues.some((item) => item.id === product)
+        
+    }
+
 
     return(
-        <CartContext.Provider value={{cartValues, addProduct, totalCart, handleRemove, totalPrice}}>
+        <CartContext.Provider value={{cartValues, addProduct, totalCart, handleRemove, totalPrice, disableButtonIfExists}}>
             {children}
         </CartContext.Provider>
     )

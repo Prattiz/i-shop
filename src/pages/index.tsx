@@ -21,7 +21,7 @@ interface HomeProps {
 
 export default function Home({ products }: HomeProps) {
 
-  const { addProduct } = useContext(CartContext)
+  const { addProduct, disableButtonIfExists } = useContext(CartContext)
 
   const [ sliderRef ] = useKeenSlider({
     slides: {
@@ -51,7 +51,10 @@ export default function Home({ products }: HomeProps) {
                   <span>{product.price}</span>
                 </div>
 
-                <button type="button" onClick={(e) => handleAddProduct(e, product)}>
+                <button 
+                type="button" 
+                disabled={disableButtonIfExists(product.id)}
+                onClick={(e) => handleAddProduct(e, product)}>
                   <Handbag size={28} weight="bold"/>
                 </button>
               </footer>

@@ -26,5 +26,10 @@ export const GlobalStyles = globalCss({
   'button':{
     cursor: 'pointer',
     border: 'none',
+
+    '&:disabled':{
+      cursor: 'not-allowed',
+      opacity: 0.5,
+  }
   },
 });
