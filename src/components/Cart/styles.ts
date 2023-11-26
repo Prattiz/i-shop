@@ -73,6 +73,11 @@ export const CartConteiner = styled(Dialog.Content, {
                 fontSize: '$sml',
             },
         }  
+    },
+    main:{
+        overflowY: 'auto',
+        overflowX: 'hidden',
+        height: 480,
     }
 })
 
@@ -91,7 +96,7 @@ export const SelectedProducts = styled('section', {
     display: "flex",
     flexDirection: 'column',
     gap: '2rem',
-    overflow: 'auto',
+   
 })
 
 export const Product = styled('div', {
