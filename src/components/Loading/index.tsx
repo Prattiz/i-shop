@@ -1,4 +1,4 @@
-import { ComponentProps } from "react";
+import { ComponentProps, useEffect, useState } from "react";
 import { Background, SckeletonContainer } from "./styles";
 
 

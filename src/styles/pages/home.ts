@@ -13,6 +13,7 @@ export const HomeProduct = styled('div', {
     maxWidth: 550,
     width: "100%",
     borderRadius: 8,
+    marginRight: '4rem',
     padding: '.4rem',
     cursor: 'pointer',
     position: 'relative',
@@ -70,5 +71,5 @@ export const HomeProduct = styled('div', {
             transform: 'translateY(0%)',
             opacity: 1
         }
-    }   
+    }
 });

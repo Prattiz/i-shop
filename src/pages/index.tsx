@@ -11,9 +11,11 @@ import 'keen-slider/keen-slider.min.css';
 import { stripe } from "../lib/stripe";
 import Stripe from "stripe";
 
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
+
 import { CartContext, ProductProps } from "../context/context";
 import { SckeletonProduct } from "../components/Loading";
+
 
 
 interface HomeProps {
@@ -22,7 +24,17 @@ interface HomeProps {
 
 export default function Home({ products }: HomeProps) {
 
+  const [ loading, setLoading ] = useState(true);
+
+    useEffect(() => {
+        const timeOut = setTimeout(() => setLoading(false), 2000);
+
+        return () => clearTimeout(timeOut);
+    }, [])
+
   const { addProduct, disableButtonIfExists } = useContext(CartContext);
+  
+
 
   const [ sliderRef ] = useKeenSlider({
     slides: {
@@ -39,10 +51,16 @@ export default function Home({ products }: HomeProps) {
 
   return (
     <HomeContainer ref={sliderRef} className="keen-slider">
-      <SckeletonProduct className="keen-slider__slide"/>
-      <SckeletonProduct className="keen-slider__slide"/>
-      <SckeletonProduct className="keen-slider__slide"/>
-      {/* {
+      
+      { 
+      // fake loading:
+      // loading ? 
+      // <>
+      //   <SckeletonProduct />
+      //   <SckeletonProduct /> 
+      //   <SckeletonProduct />
+      // </>
+      //  : 
       products.map(product => {
         return (
           <Link href={`/product/${product.id}`} key={product.id} prefetch={false}>
@@ -66,7 +84,7 @@ export default function Home({ products }: HomeProps) {
           </Link>
         )
       })
-      } */}
+      } 
     </HomeContainer>
   )
 }

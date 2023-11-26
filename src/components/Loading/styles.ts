@@ -1,11 +1,11 @@
-import { keyframes, styled } from '../../styles';
+import { styled } from '../../styles';
 
 
 export const SckeletonContainer = styled('div', {
     width: 550,
     height: 550,
     display: 'grid',
-    gap: 24,
+    marginRight: '4rem',
     gridTemplateRows: '1fr 32px',
 
     div: {

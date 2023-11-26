@@ -32,4 +32,15 @@ export const GlobalStyles = globalCss({
       opacity: 0.5,
   }
   },
+
+  '::-webkit-scrollbar': {
+    width: '1.2rem',
+    borderRadius: '.3rem',
+    backgroundColor: 'transparent'
+},
+
+'::-webkit-scrollbar-thumb': {
+    backgroundColor: '$green300', 
+    borderRadius: 6, 
+}
 });
